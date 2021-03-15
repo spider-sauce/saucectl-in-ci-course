@@ -1,0 +1,16 @@
+title: saucectl-in-ci
+description: SauceCTL used in a GitHub Actions pipeline
+template:
+  repo: saucectl-in-ci-template
+  name: saucectl-in-ci
+before:
+  - type: createIssue
+    title: Welcome!
+    body: new-issue.md
+steps:
+  - title: First step
+    description: The first step in your course
+    event: issues.assigned
+    link: '{{ repoUrl }}'
+    actions:
+      - type: closeIssue
